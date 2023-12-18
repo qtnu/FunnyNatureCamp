@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>活动反馈</title>
+
+    <link rel="stylesheet" href="css/Tieba.css">
+</head>
+<body style="background: linear-gradient(to top, #00aced, #ffffff);">
+<div class="Title">
+    <div class="container">
+        <img style="height: 5%" src="res/img/banner.png" alt="Image">
+        <div class="overlay"></div>
+    </div>
+
+</div>
+
+<div class="modelNew" >
+    <input type="text" placeholder="  搜点啥吧~~~"
+           style="width: 230px; margin-left: 10px;margin-right: 5px; border-radius: 10px;">
+    <input type="submit" value="搜索"
+           style="width: 50px;border-radius: 10PX;background-color: lightskyblue;"
+           onclick="alert('暂时找不到哦')">
+</div>
+
+<div class="floating-button">
+    <div class="floating-button-icon">
+        <div class="floating-button-cross"></div>
+    </div>
+</div>
+<div class="message-box">
+    <form>
+        <textarea placeholder="发个帖子和大家聊聊把~~~~"></textarea>
+    </form>
+    <button type="submit" style="border-radius: 10px;border: 1px solid #ddd;
+        background-color: lightskyblue;color: white;margin-bottom: 160px">发布</button>
+</div>
+
+<div class="card">
+    <div class="NameAndImg">
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="communication_new.html" >社区交流</a>
+            </div>
+        </div>
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="#">经验分享</a>
+            </div>
+        </div>
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="communication_hotel.html">生活驿站 </a>
+            </div>
+        </div>
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="communication_knowledge.html">自然百科</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="model">
+    <!--帖子1-->
+    <div class="post" id="post1">
+        <img src="img/logo.png"  alt="Avatar" class="avatar">
+        <div class="post-details">
+            <div class="name">乡下人家</div>
+            <div class="time">一 月前</div>
+            <div class="content">头一回接触关于自然教育的机构，刚开始以为是假的，抱着好奇的心理去试一试。太让我惊喜了，活动内容都很丰富，老师很负责，宝宝们玩得都很开心。</div>
+            <img class="imgShow" src="res/img/photo/img_7.png">
+            <div class="actions">
+                <p style="color:gray;size: 1px;margin-left: -20px">99+</p>
+                <div class="action-item like-icon" onclick="toggleLike('post1')"></div>
+                <p style="color:gray;margin-left: -10px;">99+</p>
+                <div class="action-item shared-icon" onclick="toggleShare('post1')">&#9733;</div>
+                <div class="comment-input">
+                    <button class="" style="margin-left:10px;border-radius: 10px " onclick="toggleCommentBox('post1')">评论</button>
+                    <div class="comment-box">
+                        <textarea placeholder="友好交流吧..."></textarea>
+                        <button class="submit-button" onclick="postComment(this, 'post1')">发布</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments">
+        <div class="comment">
+            <img src="res/img/user/man_10.jpg" alt="Avatar" class="comment-avatar">
+            <div class="comment-name" style="margin-right: 5px;text-align: left">人生如茶：</div>
+            <div class="comment-content">就凭你这一条，给我孩子报个班。</div>
+        </div>
+
+    </div>
+</div>
+
+<div class="model">
+    <!--帖子1-->
+    <div class="post" id="post2">
+        <img src="res/img/user/man_13.jpg"  alt="Avatar" class="avatar">
+        <div class="post-details">
+            <div class="name">一颗葡萄</div>
+            <div class="time">19-07-05</div>
+            <div class="content">朋友介绍过来的，真的很值得，一直在为孩子自然教育方面发愁，这不出现一个现成的机构，泰酷辣！！！赞赞赞！！！！！</div>
+            <div class="actions">
+                <p style="color:gray;size: 1px;margin-left: -20px">99+</p>
+                <div class="action-item like-icon" onclick="toggleLike('post2')"></div>
+                <p style="color:gray;margin-left: -10px;">99+</p>
+                <div class="action-item shared-icon" onclick="toggleShare('post2')">&#9733;</div>
+                <div class="comment-input">
+                    <button class="" style="margin-left:10px; border-radius: 10px" onclick="toggleCommentBox('post2')">评论</button>
+                    <div class="comment-box">
+                        <textarea placeholder="良言一句三冬暖..."></textarea>
+                        <button class="submit-button" onclick="postComment(this, 'post2')">发布</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--评论区1-->
+    <div class="comments">
+        <div class="comment">
+            <img src="res/img/user/man_11.jpg" alt="Avatar" class="comment-avatar">
+            <div class="comment-name">秋水伊人:</div>
+            <div class="comment-content">我也是，现在轻松了很多，有空可以一起交流学习。</div>
+        </div>
+        <div class="comment">
+            <img src="res/img/user/man_9.jpg" alt="Avatar" class="comment-avatar">
+            <div class="comment-name" >雨过天晴：</div>
+            <div class="comment-content">机构里面的老师都很专业，也很有耐心，价格实惠，不用担心经济问题去不起。希望有越来越多这种机构。</div>
+        </div>
+
+    </div>
+</div>
+
+<div class="model">
+    <!--帖子1-->
+    <div class="post" id="post3">
+        <img src="res/img/user/man_12.jpg"  alt="Avatar" class="avatar">
+        <div class="post-details">
+            <div class="name">悠然山人</div>
+            <div class="time">18-04-17</div>
+            <div class="content"><img class="imgShow" src="res/img/photo/img_8.png"></div>
+            <div class="actions">
+                <p style="color:gray;size: 1px;margin-left: -20px">99+</p>
+                <div class="action-item like-icon" onclick="toggleLike('post3')"></div>
+                <p style="color:gray;margin-left: -10px;">99+</p>
+                <div class="action-item shared-icon" onclick="toggleShare('post3')">&#9733;</div>
+                <div class="comment-input">
+                    <button class="" style="margin-left:10px;border-radius: 10px " onclick="toggleCommentBox('post3')">评论</button>
+                    <div class="comment-box">
+                        <textarea placeholder="随时随地上网冲浪..."></textarea>
+                        <button class="submit-button" onclick="postComment(this, 'post3')">发布</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script>
+    var isLiked = false;
+    var isShared = false;
+    var postId = null;
+
+    function toggleLike(postId) {
+        var likeButton = document.getElementById(postId).querySelector('.action-item.like-icon');
+        isLiked = !isLiked;
+        likeButton.classList.toggle('liked');
+    }
+
+    function toggleShare(postId) {
+        var shareButton = document.getElementById(postId).querySelector('.action-item.shared-icon');
+        isShared = !isShared;
+
+        shareButton.classList.toggle('shared');
+        hideCommentBox(commentBox);
+    }
+
+    function hideCommentBox(commentBox) {
+        commentBox.style.display = 'none';
+    }
+
+    function toggleCommentBox(postId) {
+        var commentBox = document.getElementById(postId).querySelector('.comment-box');
+        var isCommentBoxVisible = commentBox.style.display === 'block';
+
+        if (isCommentBoxVisible) {
+            commentBox.style.display = 'none';
+        } else {
+            commentBox.style.display = 'block';
+            var commentInput = commentBox.querySelector('textarea');
+            commentInput.focus();
+        }
+    }
+
+    function postComment(button, postId) {
+        var commentBox = button.parentNode;
+        var commentInput = commentBox.querySelector('textarea');
+        var commentContent = commentInput.value;
+
+        if (commentContent.trim() !== '') {
+            var commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+
+            var avatarElement = document.createElement('img');
+            avatarElement.classList.add('comment-avatar');
+            avatarElement.src = 'res/img/man.jpg';
+            commentElement.appendChild(avatarElement);
+
+            var nameElement = document.createElement('div');
+            nameElement.classList.add('comment-name');
+            nameElement.textContent = '我:';
+            commentElement.appendChild(nameElement);
+
+            var contentElement = document.createElement('div');
+            contentElement.classList.add('comment-content');
+            contentElement.textContent = commentContent;
+            commentElement.appendChild(contentElement);
+
+            var commentsContainer = document.getElementById(postId).nextElementSibling;
+            commentsContainer.appendChild(commentElement);
+
+            commentInput.value = '';
+            hideCommentBox(commentBox);
+        }
+    }
+
+    document.addEventListener('click', function(event) {
+        var targetElement = event.target;
+        var commentInput = document.querySelector('.comment-input');
+
+        if (!commentInput.contains(targetElement)) {
+            hideCommentBox();
+        }
+    });
+</script>
+<script>
+    const floatingButton = document.querySelector('.floating-button');
+    const messageBox = document.querySelector('.message-box');
+
+    floatingButton.addEventListener('click', () => {
+        messageBox.style.display = 'flex';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!messageBox.contains(event.target) && !floatingButton.contains(event.target)) {
+            messageBox.style.display = 'none';
+        }
+    });
+
+</script>
+</body>
+</html>
+

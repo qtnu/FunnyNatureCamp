@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+    img{
+      border-radius: 10px;
+    }
+
+    /* CSS styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+      border-radius: 20px;
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+
+    .container {
+      column-count: 2;
+      column-gap: 10px;
+      margin: 10px;
+    }
+
+    .month {
+      margin-bottom: 20px;
+      break-inside: avoid;
+    }
+
+    .month h2 {
+      margin: 10px 0;
+    }
+
+    .month img {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    a{
+      text-decoration: none;
+      color: dodgerblue;
+    }
+
+    .preview-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .preview-modal.active {
+      display: flex;
+    }
+
+    .preview-modal img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+
+    /* CSS样式 */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .enlarged-container {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .enlarged-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+  </style>
+</head>
+<body style="background: linear-gradient(to top, #00aced, #ffffff);">
+<div class="header">
+  <div style="display:flex;">
+    <h3 style="flex: 1.5;margin-right: 10px">你好,陈莹莹小朋友</h3>
+  </div>
+
+  <select id="year" style="border-radius: 10px">
+    <option value="2023">2023</option>
+    <option value="2022">2022</option>
+  </select>
+  <select id="month" style="border-radius: 10px">
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+    <option value="June">June</option>
+    <option value="July">July</option>
+    <option value="August">August</option>
+    <option value="September">September</option>
+    <option value="October">October</option>
+    <option value="November">November</option>
+    <option value="December">December</option>
+  </select>
+
+</div>
+
+<div class="container">
+  <!-- 2023年的照片 -->
+  <div class="month" id="2023January">
+    <h2>一月 2023</h2>
+    <img src="res/drawable/photo%20(1).jpg" alt="January 2023 - Photo 1">
+    <img src="res/drawable/photo%20(2).jpg" alt="January 2023 - Photo 2">
+    <!-- 添加更多照片 -->
+  </div>
+  <div class="month" id="2023February">
+    <h2>二月 2023</h2>
+    <img src="res/drawable/photo%20(32).jpg" alt="February 2023 - Photo 1">
+    <img src="res/drawable/photo%20(10).jpg" alt="February 2023 - Photo 2">
+    <!-- 添加更多照片 -->
+  </div>
+  <div class="month" id="2023March">
+  <h2>三月 2023</h2>
+  <img src="res/drawable/photo%20(11).jpg" alt="March 2023 - Photo 1">
+  <img src="res/drawable/photo%20(28).jpg" alt="March 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2023April">
+  <h2>四月 2023</h2>
+  <img src="res/drawable/photo%20(38).jpg" alt="April 2023 - Photo 1">
+  <img src="res/drawable/photo%20(40).jpg" alt="April 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2023May">
+  <h2>五月 2023</h2>
+  <img src="res/drawable/photo%20(51).jpg" alt="May 2023 - Photo 1">
+  <img src="res/drawable/photo%20(26).jpg" alt="May 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2023June">
+  <h2>六月 2023</h2>
+  <img src="res/drawable/photo%20(23).jpg" alt="June 2023 - Photo 1">
+  <img src="res/drawable/photo%20(48).jpg" alt="June 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2023July">
+  <h2>七月 2023</h2>
+  <img src="res/drawable/photo%20(15).jpg" alt="July 2023 - Photo 1">
+  <img src="res/drawable/photo%20(29).jpg" alt="July 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2023August">
+  <h2>八月 2023</h2>
+  <img src="res/drawable/photo%20(3).jpg" alt="August 2023 - Photo 1">
+  <img src="res/drawable/photo%20(4).jpg" alt="August 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2023September">
+  <h2>九月 2023</h2>
+  <img src="res/drawable/photo%20(1).jpg" alt="September 2023 - Photo 1">
+  <img src="res/drawable/photo%20(2).jpg" alt="September 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2023October">
+  <h2>十月 2023</h2>
+  <img src="res/drawable/photo%20(3).jpg" alt="October 2023 - Photo 1">
+  <img src="res/drawable/photo%20(4).jpg" alt="October 2023 - Photo 2">
+  <!-- 添加更多照片 -->
+  <div class="month" id="2023November">
+    <h2>十一月 2023</h2>
+    <img src="res/drawable/photo%20(1).jpg" alt="November 2023 - Photo 1">
+    <img src="res/drawable/photo%20(2).jpg" alt="November 2023 - Photo 2">
+    <!-- 添加更多照片 -->
+  </div>
+  <div class="month" id="2023December">
+    <h2>十二月 2023</h2>
+    <img src="res/drawable/photo%20(3).jpg" alt="December 2023 - Photo 1">
+    <img src="res/drawable/photo%20(4).jpg" alt="December 2023 - Photo 2">
+    <!-- 添加更多照片 -->
+  </div>
+</div>
+  <!-- 2022年的照片 -->
+<div class="month" id="2022January">
+  <h2>一月 2022</h2>
+  <img src="res/drawable/photo%20(5).jpg" alt="January 2022 - Photo 1">
+  <img src="res/drawable/photo%20(6).jpg" alt="January 2022 - Photo 2">
+  <!-- 添加更多照片 -->
+</div>
+<div class="month" id="2022February">
+  <h2>二月 2022</h2>
+  <img src="res/drawable/photo%20(7).jpg" alt="February 2022 - Photo 1">
+  <img src="res/drawable/photo%20(8).jpg" alt="February 2022 - Photo 2">
+</div>
+  <div class="month" id="2022April">
+    <h2>四月 2022</h2>
+    <img src="res/drawable/photo%20(12).jpg" alt="April 2022 - Photo 12">
+    <img src="res/drawable/photo%20(13).jpg" alt="April 2022 - Photo 13">
+    <img src="res/drawable/photo%20(14).jpg" alt="May 2022 - Photo 14">
+    <img src="res/drawable/photo%20(15).jpg" alt="May 2022 - Photo 15">
+    <img src="res/drawable/photo%20(16).jpg" alt="May 2022 - Photo 16">
+    <img src="res/drawable/photo%20(17).jpg" alt="May 2022 - Photo 17">
+    <img src="res/drawable/photo%20(18).jpg" alt="June 2022 - Photo 18">
+    <img src="res/drawable/photo%20(19).jpg" alt="June 2022 - Photo 19">
+    <img src="res/drawable/photo%20(20).jpg" alt="June 2022 - Photo 20">
+    <img src="res/drawable/photo%20(21).jpg" alt="June 2022 - Photo 21">
+    <img src="res/drawable/photo%20(22).jpg" alt="July 2022 - Photo 22">
+    <img src="res/drawable/photo%20(23).jpg" alt="July 2022 - Photo 23">
+    <img src="res/drawable/photo%20(24).jpg" alt="July 2022 - Photo 24">
+    <img src="res/drawable/photo%20(25).jpg" alt="July 2022 - Photo 25">
+    <img src="res/drawable/photo%20(26).jpg" alt="August 2022 - Photo 26">
+    <img src="res/drawable/photo%20(27).jpg" alt="August 2022 - Photo 27">
+    <img src="res/drawable/photo%20(28).jpg" alt="August 2022 - Photo 28">
+    <img src="res/drawable/photo%20(29).jpg" alt="August 2022 - Photo 29">
+    <img src="res/drawable/photo%20(30).jpg" alt="August 2022 - Photo 30">
+    <img src="res/drawable/photo%20(31).jpg" alt="August 2022 - Photo 31">
+    <img src="res/drawable/photo%20(32).jpg" alt="September 2022 - Photo 32">
+    <img src="res/drawable/photo%20(33).jpg" alt="September 2022 - Photo 33">
+    <img src="res/drawable/photo%20(34).jpg" alt="September 2022 - Photo 34">
+    <img src="res/drawable/photo%20(35).jpg" alt="September 2022 - Photo 35">
+    <img src="res/drawable/photo%20(36).jpg" alt="October 2022 - Photo 36">
+    <img src="res/drawable/photo%20(37).jpg" alt="October 2022 - Photo 37">
+    <img src="res/drawable/photo%20(38).jpg" alt="October 2022 - Photo 38">
+    <img src="res/drawable/photo%20(39).jpg" alt="October 2022 - Photo 39">
+    <img src="res/drawable/photo%20(40).jpg" alt="November 2022 - Photo 40">
+    <img src="res/drawable/photo%20(41).jpg" alt="November 2022 - Photo 41">
+    <img src="res/drawable/photo%20(42).jpg" alt="November 2022 - Photo 42">
+    <img src="res/drawable/photo%20(43).jpg" alt="November 2022 - Photo 43">
+    <img src="res/drawable/photo%20(44).jpg" alt="November 2022 - Photo 44">
+    <img src="res/drawable/photo%20(45).jpg" alt="December 2022 - Photo 45">
+    <img src="res/drawable/photo%20(46).jpg" alt="December 2022 - Photo 46">
+    <img src="res/drawable/photo%20(47).jpg" alt="December 2022 - Photo 47">
+    <img src="res/drawable/photo%20(48).jpg" alt="December 2022 - Photo 48">
+    <img src="res/drawable/photo%20(49).jpg" alt="December 2022 - Photo 49">
+
+  </div>
+
+</div>
+
+<script>// JavaScript代码
+const yearSelect = document.getElementById('year');
+const monthSelect = document.getElementById('month');
+
+yearSelect.addEventListener('change', handleDateSelection);
+monthSelect.addEventListener('change', handleDateSelection);
+
+function handleDateSelection() {
+  const selectedYear = yearSelect.value;
+  const selectedMonth = monthSelect.value;
+  const anchorLink = `#${selectedYear}${selectedMonth}`;
+  const anchorElement = document.getElementById(selectedYear + selectedMonth);
+
+  if (anchorElement) {
+    anchorElement.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// 添加图片放大功能
+const images = document.querySelectorAll('.month img');
+let overlay = null;
+
+images.forEach(image => {
+  image.addEventListener('click', handleImageClick);
+});
+
+function handleImageClick(event) {
+  const image = event.target;
+
+  // 创建覆盖层
+  overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+
+  // 创建放大图片容器
+  const enlargedContainer = document.createElement('div');
+  enlargedContainer.classList.add('enlarged-container');
+
+  // 创建放大图片
+  const enlargedImage = document.createElement('img');
+  enlargedImage.src = image.src;
+  enlargedImage.classList.add('enlarged-image');
+
+  // 将放大图片添加到放大图片容器中
+  enlargedContainer.appendChild(enlargedImage);
+
+  // 将放大图片容器添加到覆盖层中
+  overlay.appendChild(enlargedContainer);
+
+  // 将覆盖层添加到文档主体中
+  document.body.appendChild(overlay);
+
+  // 点击覆盖层任意位置退出预览
+  overlay.addEventListener('click', handleOverlayClick);
+}
+
+function handleOverlayClick(event) {
+  // 移除覆盖层
+  overlay.parentNode.removeChild(overlay);
+}
+</script>
+
+</body>
+</html>
+

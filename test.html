@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GIF动画播放</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('res/img/SHIO.gif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .login-popup {
+            align-items: center;
+            border-radius: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            display: none; /* 初始隐藏登录框 */
+        }
+    </style>
+</head>
+<body>
+<div class="gif-container">
+    <div class="login-popup">
+        <h3>登录框</h3>
+        <input type="text" placeholder="用户名"><br>
+        <input type="password" placeholder="密码"><br>
+        <button onclick="login()">登录</button>
+    </div>
+</div>
+
+<script>
+    function login() {
+        location.replace("opreation.html");
+    }
+
+    var gifContainer = document.querySelector('.gif-container');
+    var loginPopup = document.querySelector('.login-popup');
+
+    gifContainer.addEventListener('animationend', function() {
+        // 动画播放完成后显示登录框
+        loginPopup.style.display = 'flex';
+    });
+</script>
+</body>
+</html>

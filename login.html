@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>login</title>
+    <style>
+        .input_text{
+            border-radius: 10px;
+        }
+        .model{
+            align-items: center;
+            border-radius: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+    </style>
+</head>
+<body background="res/img/newLogo.png">
+<div class="model">
+    <div>
+        <h2 align="center">趣自然</h2>
+
+            账号<input class="input_text" type="text" id="userId">
+            <br>
+            密码<input class="input_text" type="password" id="password">
+            <br>
+            <input type="submit" value="登录" onclick="location.replace('opreation.html')" style="border-radius: 10px">
+            <a href="#" style="text-decoration: none;"><p style="size: 2px;color: deepskyblue">注册</p></a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

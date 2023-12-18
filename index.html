@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GIF动画播放</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+        /* 根据需要设置图片容器的宽度和高度 */
+        .image-container {
+            width: 100%;
+            max-width: 100%; /* 图片容器的最大宽度，根据需要调整 */
+            height: auto; /* 高度自适应，保持宽高比例 */
+            overflow: hidden; /* 超出容器范围的部分隐藏 */
+        }
+        /* 根据需要设置图像的宽度和高度 */
+        .image-container img {
+            width: 100%;
+            height: auto; /* 高度自适应，保持图像比例 */
+        }
+
+    </style>
+    <style>
+        .input_text{
+            border-radius: 10px;
+        }
+        .login-popup{
+            align-items: center;
+            border-radius: 20px;
+            border: 2px solid #ddd;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="image-container">
+    <img src="res/img/SHIO.gif" alt="GIF Animation">
+</div>
+
+<script>
+    function login(){
+        location.replace("opreation.html")
+    }
+    // 获取图片元素
+    var img = document.querySelector('img');
+
+    // 监听图片加载完成事件
+    img.addEventListener('load', function() {
+        // 设置定时器，在动画播放完成后停留在页面并弹出登录框
+        setTimeout(function() {
+            // 创建登录框元素
+            var loginPopup = document.createElement('div');
+            loginPopup.classList.add('login-popup');
+            loginPopup.innerHTML = '<h3>趣自然</h3>' +
+                '账号<input type="text" placeholder="用户名">' +
+                '<br>密码<input type="password" placeholder="密码"><br><button onclick="login()">登录</button>';
+
+            // 将登录框添加到页面中
+            document.body.appendChild(loginPopup);
+        }, img.duration * 1000); // 使用图片的持续时间作为定时器延迟时间，单位为毫秒
+    });
+</script>
+</body>
+</html>

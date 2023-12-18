@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>知识科普</title>
+    <style>
+        .model {
+            margin: 10px;
+            background-color: white;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            height: auto;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card {
+            margin-left: 25%;
+            display: flex;
+            margin-top: 10px;;
+            border-radius: 10px;
+            height: auto;
+            width: 100%;
+        }
+
+        .ifr {
+            position: fixed;
+            border: none;
+            width: 100%;
+            height: 88%;
+        }
+
+        .urlShow {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+
+        }
+
+        .image-container {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .image-container img {
+            margin: 10px;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .content-container {
+            flex: 2;
+        }
+
+        .content-container a {
+            text-decoration: none;
+        }
+
+        .content-container h6 {
+            margin: 0;
+            font-size: 14px;
+        }
+
+
+        .hang {
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            display: flex;
+            margin: 0px;
+            width: 100%;
+        }
+    </style>
+    <style>
+        .banner {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            width: 300%; /* 显示三张图片，每张图片占据宽度的 33.33% */
+            animation: slide 30s linear infinite; /* 10 秒钟完成一次循环动画 */
+        }
+
+        .slider img {
+            width: 33.33%; /* 每张图片占据父容器宽度的 33.33% */
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+            33.33% {
+                transform: translateX(-100%);
+            }
+            66.66% {
+                transform: translateX(-200%);
+            }
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+    </style>
+</head>
+<body style="background-color: #00aced">
+
+<!--<div class="banner">
+    <div class="slider">
+        <img src="res/img/logo.png" alt="Image 1">
+        <img src="res/img/tree.jpg" alt="Image 2">
+        <img src="res/img/man.jpg" alt="Image 3">
+    </div>
+</div>-->
+
+<div class="model">
+    <h4 style="margin-bottom: -5px;margin-top: 2px">内容搜索</h4>
+    <div class="card">
+
+        <input placeholder="  想搜点啥~~" style="border-radius: 10px;
+        margin-left:-30px;width: 60%;margin-bottom: 10px;
+        padding: 2px" type="text">
+        <input style="border-radius: 10px;height: 22px;margin-left: 2px;background-color: lightskyblue" type="submit" value="搜索">
+    </div>
+</div>
+
+<div class="hang">
+    <p style="margin-left: 35px">学习自然知识，感受自然乐趣</p>
+</div>
+
+<div class="model">
+
+
+    <div class="urlShow" style="border-bottom: 2px solid lightskyblue;">
+        <div class="image-container">
+            <img alt="Logo" src="res/img/title1.jpg">
+        </div>
+        <div class="content-container">
+            <a href="https://mp.weixin.qq.com/s/CoVSewd-VIy850jhsynnQQ">
+                <h6>好书推介 | 在童书中读懂地球，2023年“生态童书60”书单发布</h6>
+            </a>
+        </div>
+    </div>
+    <div class="urlShow" style="border-bottom: 2px solid lightskyblue;">
+        <div class="image-container">
+            <img alt="Logo" src="res/img/title2.jpg">
+        </div>
+        <div class="content-container">
+            <a href="https://mp.weixin.qq.com/s?__biz=MzkwOTQyNjAxMQ%3D%3D&mid=2247483989&idx=1&sn=f85ffa12a72dcf39a06cd686b5daf6b1&scene=45#wechat_redirect">
+                <h6>自然教育原理</h6>
+            </a>
+        </div>
+    </div>
+    <div class="urlShow" style="border-bottom: 2px solid lightskyblue;">
+        <div class="image-container">
+            <img alt="Logo" src="res/img/title3.png">
+        </div>
+        <div class="content-container">
+            <a href="https://mp.weixin.qq.com/s/TJoH-eg7P2krt7TkxP3A3w">
+                <h6>荐读 | 认知与解读自然的有效方式——自然笔记</h6>
+            </a>
+        </div>
+    </div>
+    <div class="urlShow" style="border-bottom: 2px solid lightskyblue;">
+        <div class="image-container">
+            <img alt="Logo" src="res/img/title4.png">
+        </div>
+        <div class="content-container">
+            <a href="https://mp.weixin.qq.com/s/I6Sep_qWqXFFQ2nsKFCLTQ">
+                <h6>热闻盘点 | 2022中国自然教育行业热闻知多少</h6>
+            </a>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

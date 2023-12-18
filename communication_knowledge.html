@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>自然百科</title>
+
+    <link rel="stylesheet" href="css/Tieba.css">
+</head>
+<body style="background: linear-gradient(to top, #00aced, #ffffff);">
+<div class="Title">
+    <div class="container">
+        <img style="height: 5%" src="res/img/banner.png" alt="Image">
+        <div class="overlay"></div>
+    </div>
+
+</div>
+
+<div class="modelNew" >
+    <input type="text" placeholder="  搜点啥吧~~~"
+           style="width: 230px; margin-left: 10px;margin-right: 5px; border-radius: 10px;">
+    <input type="submit" value="搜索"
+           style="width: 50px;border-radius: 10PX;background-color: lightskyblue;"
+           onclick="alert('暂时找不到哦')">
+</div>
+
+<div class="floating-button">
+    <div class="floating-button-icon">
+        <div class="floating-button-cross"></div>
+    </div>
+</div>
+<div class="message-box">
+    <form>
+        <textarea placeholder="发个帖子和大家聊聊把~~~~"></textarea>
+    </form>
+    <button type="submit" style="border-radius: 10px;border: 1px solid #ddd;
+        background-color: lightskyblue;color: white;margin-bottom: 160px">发布</button>
+</div>
+
+<div class="card">
+    <div class="NameAndImg">
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="communication_new.html" >社区交流</a>
+            </div>
+        </div>
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="#">经验分享</a>
+            </div>
+        </div>
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="communication_hotel.html">生活驿站 </a>
+            </div>
+        </div>
+
+        <div class="card-a">
+            <div class="card-v">
+                <a href="communication_share.html">活动反馈</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="model">
+    <!--帖子1-->
+    <div class="post" id="post1">
+        <img src="img/logo.png"  alt="Avatar" class="avatar">
+        <div class="post-details">
+            <div class="name">小朱老师</div>
+            <div class="time">1 天前</div>
+            <div class="content">家长们，你们真的知道什么是幼儿自然教育吗？自然教育是一种通过有吸引力的自然教育活动，在自然环境中以幼儿为媒介，利用科学有效的方法，让体验者在生态自然体系下，在劳动中接受教育，建立与自然的联结，使幼儿融入大自然，培养面向一生的优质生存能力、培养生活强者的教育模式。通过系统的手段实现儿童对自然信息的有效采集、整理、编织，建立生态世界观，尊重生命，遵循自然规律，促进幼儿的身心健康发展，以期实现人与自然和谐发展的教育过程。</div>
+            <div class="actions">
+                <p style="color:gray;size: 1px;margin-left: -20px">99+</p>
+                <div class="action-item like-icon" onclick="toggleLike('post1')"></div>
+                <p style="color:gray;margin-left: -10px;">99+</p>
+                <div class="action-item shared-icon" onclick="toggleShare('post1')">&#9733;</div>
+                <div class="comment-input">
+                    <button class="" style="margin-left:10px;border-radius: 10px " onclick="toggleCommentBox('post1')">评论</button>
+                    <div class="comment-box">
+                        <textarea placeholder="友好交流吧..."></textarea>
+                        <button class="submit-button" onclick="postComment(this, 'post1')">发布</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="model">
+    <!--帖子1-->
+    <div class="post" id="post2">
+        <img src="res/img/man.jpg"  alt="Avatar" class="avatar">
+        <div class="post-details">
+            <div class="name">一颗葡萄</div>
+            <div class="time">18-5-21</div>
+            <div class="content">孩子不爱参加自然教育怎么办？家长可以有什么方式解决。</div>
+            <div class="actions">
+                <p style="color:gray;size: 1px;margin-left: -20px">99+</p>
+                <div class="action-item like-icon" onclick="toggleLike('post2')"></div>
+                <p style="color:gray;margin-left: -10px;">99+</p>
+                <div class="action-item shared-icon" onclick="toggleShare('post2')">&#9733;</div>
+                <div class="comment-input">
+                    <button class="" style="margin-left:10px; border-radius: 10px" onclick="toggleCommentBox('post2')">评论</button>
+                    <div class="comment-box">
+                        <textarea placeholder="良言一句三冬暖..."></textarea>
+                        <button class="submit-button" onclick="postComment(this, 'post2')">发布</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--评论区1-->
+    <div class="comments">
+        <div class="comment">
+            <img src="img/logo.png" alt="Avatar" class="comment-avatar">
+            <div class="comment-name" style="margin-right: 5px;text-align: left">小朱老师：</div>
+            <div class="comment-content">当孩子开始对外界产生好奇时，父母就要根据孩子每个阶段的敏感期，训练孩子的各种能力。引导孩子对自然产生兴趣和好奇心很强，比如，允许孩子在路上捡一块石头，敲一敲；鼓励孩子摸一摸树叶，花草......在家长的引导之下，孩子渐渐就知道如何与大自然保持最亲近、最安全的距离了。当然，家长也要投身与自然教育中，不断鼓励孩子，循序渐进，与孩子一起接受自然教育。</div>
+        </div>
+        <div class="comment">
+            <img src="res/img/user/man_9.jpg" alt="Avatar" class="comment-avatar">
+            <div class="comment-name" >雨过天晴：</div>
+            <div class="comment-content">老师就是老师非常的专业。</div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    var isLiked = false;
+    var isShared = false;
+    var postId = null;
+
+    function toggleLike(postId) {
+        var likeButton = document.getElementById(postId).querySelector('.action-item.like-icon');
+        isLiked = !isLiked;
+        likeButton.classList.toggle('liked');
+    }
+
+    function toggleShare(postId) {
+        var shareButton = document.getElementById(postId).querySelector('.action-item.shared-icon');
+        isShared = !isShared;
+
+        shareButton.classList.toggle('shared');
+        hideCommentBox(commentBox);
+    }
+
+    function hideCommentBox(commentBox) {
+        commentBox.style.display = 'none';
+    }
+
+    function toggleCommentBox(postId) {
+        var commentBox = document.getElementById(postId).querySelector('.comment-box');
+        var isCommentBoxVisible = commentBox.style.display === 'block';
+
+        if (isCommentBoxVisible) {
+            commentBox.style.display = 'none';
+        } else {
+            commentBox.style.display = 'block';
+            var commentInput = commentBox.querySelector('textarea');
+            commentInput.focus();
+        }
+    }
+
+    function postComment(button, postId) {
+        var commentBox = button.parentNode;
+        var commentInput = commentBox.querySelector('textarea');
+        var commentContent = commentInput.value;
+
+        if (commentContent.trim() !== '') {
+            var commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+
+            var avatarElement = document.createElement('img');
+            avatarElement.classList.add('comment-avatar');
+            avatarElement.src = 'res/img/man.jpg';
+            commentElement.appendChild(avatarElement);
+
+            var nameElement = document.createElement('div');
+            nameElement.classList.add('comment-name');
+            nameElement.textContent = '我:';
+            commentElement.appendChild(nameElement);
+
+            var contentElement = document.createElement('div');
+            contentElement.classList.add('comment-content');
+            contentElement.textContent = commentContent;
+            commentElement.appendChild(contentElement);
+
+            var commentsContainer = document.getElementById(postId).nextElementSibling;
+            commentsContainer.appendChild(commentElement);
+
+            commentInput.value = '';
+            hideCommentBox(commentBox);
+        }
+    }
+
+    document.addEventListener('click', function(event) {
+        var targetElement = event.target;
+        var commentInput = document.querySelector('.comment-input');
+
+        if (!commentInput.contains(targetElement)) {
+            hideCommentBox();
+        }
+    });
+</script>
+<script>
+    const floatingButton = document.querySelector('.floating-button');
+    const messageBox = document.querySelector('.message-box');
+
+    floatingButton.addEventListener('click', () => {
+        messageBox.style.display = 'flex';
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!messageBox.contains(event.target) && !floatingButton.contains(event.target)) {
+            messageBox.style.display = 'none';
+        }
+    });
+
+</script>
+</body>
+</html>
+

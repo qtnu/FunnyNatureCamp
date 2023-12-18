@@ -1,0 +1,359 @@
+.Title{
+    text-align: center;
+    align-content: center;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.container::before {
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+.post .avatar {
+
+    margin-top: -80px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.post .post-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.post .name {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.post .time {
+    font-size: 12px;
+    color: blue;
+}
+
+.post .content {
+    border-radius: 10px;
+    text-align: left;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.post .actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.post .action-item {
+    margin-right: 20px;
+}
+
+.comments {
+    margin-top: 10px;
+}
+
+.comments .comment {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.comments .comment .comment-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.comments .comment .comment-name {
+    font-weight: bold;
+}
+
+.comments .comment .comment-content {
+    margin-left: 5px;
+}
+.card {
+    background-color: #d1d5db;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+.NameAndImg {
+    display: flex;
+
+
+}
+
+.card-a {
+    flex: 1;
+    width: 20%;
+    background-color: lightseagreen;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 2px;
+    border: 2px solid #ddd;
+    text-align: center;
+}
+
+.card-v {
+    height: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+}
+
+  .model{
+      background-color: whitesmoke;
+      align-items: center;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 5px;
+      margin: 10px;
+  }
+
+  a{
+      margin-left: 10px;
+      color: white;
+      text-decoration: none;
+      text-align: left;
+  }
+
+.modelNew{
+    background-color: whitesmoke;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.comment-input {
+    font-weight: bold;
+    margin-top: 10px;
+
+}
+
+.comment-input .add-button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #00aced;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.comment-input .add-button:hover {
+    transform: scale(1.1);
+}
+
+.comment-input .comment-box {
+    align-content: center;
+    position: absolute;
+    top: 60%;
+    left: 20px;
+    width: 60%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    display: none;
+}
+
+.comment-input .comment-box textarea {
+    width: 95%;
+    height: 50%;
+    resize: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.comment-input .comment-box .submit-button {
+    background-color: #00aced;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-content: center;
+}
+
+.comment-input .comment-box .submit-button:hover {
+    background-color: #0084bd;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.action-item {
+    margin-right: 10px;
+}
+.post .action-item {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.post .action-item.like-icon::before {
+    content: "\2764";
+}
+
+.post .action-item.shared-icon {
+    font-size: 20px;
+    color: gray;
+}
+
+.post .action-item.liked {
+    color: red;
+}
+
+.post .action-item.shared {
+    color: gold;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ff5a5f;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.floating-button:hover {
+    background-color: #e53935;
+}
+
+.floating-button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+}
+
+.floating-button-cross {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.floating-button-cross::before,
+.floating-button-cross::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.floating-button-cross::before {
+    transform: rotate(45deg);
+}
+
+.floating-button-cross::after {
+    transform: rotate(-45deg);
+}
+
+.message-box {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.message-box form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.message-box textarea {
+    flex-grow: 1;
+    resize: none;
+    margin-bottom: 50px;
+}
+
+.message-box button {
+    align-self: flex-end;
+}
+
+.imgShow{
+    width: 50%;
+    height: auto;
+}
